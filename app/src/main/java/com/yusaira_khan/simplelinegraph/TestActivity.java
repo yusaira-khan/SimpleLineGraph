@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 
 public class TestActivity extends ActionBarActivity {
@@ -12,7 +14,11 @@ public class TestActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        RelativeLayout main = (RelativeLayout) findViewById(R.id.main);
+        LinearLayout second = (LinearLayout) findViewById(R.id.second);
+        second.addView(new GraphView(this));
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
